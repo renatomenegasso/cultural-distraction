@@ -1,18 +1,21 @@
 (function() {
   let currentBlocks = {};
 
-  chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-
-    if(changeInfo.url && changeInfo.url.indexOf('facebook') > -1) {
-      chrome.storage.sync.get(['fb'], (result) => {
-        if(result['fb']) {
-          chrome.tabs.update(tab.id, {
-            url: 'https://en.wikipedia.org/wiki/Special:Random'
-          });
-        }
-      });
+  let checkTabBlock = (tabId, changeInfo, tab) => {
+    if(!changeInfo.url || changeInfo.url.indexOf('facebook') == -1) {
+      return;
     }
-  });
+
+    chrome.storage.sync.get(['fb'], (result) => {
+      if(result['fb']) {
+        chrome.tabs.update(tab.id, {
+          url: 'https://en.wikipedia.org/wiki/Special:Random'
+        });
+      }
+    });
+  };
+
+  chrome.tabs.onUpdated.addListener(checkTabBlock);
 
   chrome.runtime.onMessage.addListener(function (msg, sender, response) {
     currentBlocks = msg;
@@ -20,4 +23,3 @@
     chrome.storage.sync.set(msg);
   })
 })();
-
