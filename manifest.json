@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Cultural distraction",
+  "version": "0.1.1",
+  "description": "Tool to avoid to open social network - send to a random wikipedia article instead",
+  "icons": {
+    "19" : "assets/img/ico-19.png",
+    "128" : "assets/img/ico.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "assets/img/ico-19.png"
+    },
+    "default_title": "Cultural distraction",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["./assets/js/background.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "tabs",
+    "tabCapture",
+    "storage"
+  ],
+  "offline_enabled": true
+}

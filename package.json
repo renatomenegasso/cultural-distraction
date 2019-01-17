@@ -1,0 +1,16 @@
+{
+  "name": "cultural-distraction",
+  "version": "1.0.0",
+  "description": "Remove social network distraction sending to wikipedia",
+  "main": "assets/js/background.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renatomenegasso/cultural-distraction.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renatomenegasso/cultural-distraction/issues"
+  },
+  "homepage": "https://github.com/renatomenegasso/cultural-distraction#readme"
+}

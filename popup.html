@@ -1,0 +1,83 @@
+<html>
+<head>
+  <style>
+    body {
+      width: 250px;
+      height: 150px;
+      padding: 10px;
+    }
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system,".SFNSText-Regular","Helvetica Neue","Roboto","Segoe UI",sans-serif;
+    }
+
+    .toggle {
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .toggle-switch {
+      display: inline-block;
+      background: #ccc;
+      border-radius: 16px;
+      width: 40px;
+      height: 22px;
+      position: relative;
+      vertical-align: middle;
+      transition: background 0.25s;
+    }
+    .toggle-switch:before, .toggle-switch:after {
+      content: "";
+    }
+    .toggle-switch:before {
+      display: block;
+      background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+      border-radius: 50%;
+      box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 4px 0px 0 hsla(0, 0%, 0%, .04), 0 4px 9px hsla(0, 0%, 0%, .13), 0 3px 3px hsla(0, 0%, 0%, .05);
+      width: 18px;
+      height: 18px;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      transition: left 0.25s;
+    }
+    .toggle:hover .toggle-switch:before {
+      background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+      box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 4px 0px 0 hsla(0, 0%, 0%, .04), 0 4px 9px hsla(0, 0%, 0%, .13), 0 3px 3px hsla(0, 0%, 0%, .05);
+    }
+    .toggle-checkbox:checked + .toggle-switch {
+      background: #ff0000;
+    }
+    .toggle-checkbox:checked + .toggle-switch:before {
+      left: 22px;
+    }
+
+    .toggle-checkbox {
+      position: absolute;
+      visibility: hidden;
+    }
+
+    .toggle-label {
+      margin-left: 5px;
+      position: relative;
+      top: 2px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Sites bloqueados</h2>
+
+  <label class="toggle">
+    <input class="toggle-checkbox" type="checkbox" id="toggle-fb">
+    <div class="toggle-switch"></div>
+    <span class="toggle-label">Facebook</span>
+  </label>
+
+  <script src="assets/js/popup.js"></script>
+</body>
+</html>
