@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Cultural distraction",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Tool to avoid to open social network - send to a random wikipedia article instead",
   "icons": {
     "19" : "assets/img/ico-19.png",
